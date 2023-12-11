@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* regole generiche*/
+
+body {
+    background-color: aquamarine;
+    padding: 16px;
+    line-height: 1;
+    font-family: 'Darker Grotesque', sans-serif;
+    color: rgb(1, 1, 62);
+}
+
+/*pannello di gioco*/
+.game-container {
+    width: 502px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+.score {
+    font-size: 32px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*tabbellone di gioco*/
+
+.game-board {
+    position: relative;
+    border: 2px solid rgb(1, 1, 62);
+}
+
+.grid {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.cell-clicked {
+    background-color: rgb(2, 138, 92);
+}
+
+.cell-bomb {
+    background-image: url(bomba.png);
+    background-size: contain;
+    background-color: orange;
+}
+
+.cell {
+    height: 50px;
+    width: 50px;
+}
+
+.cell-dark {
+    background-color: rgb(4, 190, 128);
+}
+
+.end-game {
+    background-color: rgba(241, 117, 78, 0.541);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.end-game-text {
+    line-height: 1.2;
+    font-family: 'Press Start 2p', cursive;
+    font-size: 62px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.end-game-button {
+    font-size: 24px;
+    border: 2px solid rgb(1, 1, 62);
+    font-family: 'Darker Grotesque', sans-serif;
+    text-transform: uppercase;
+    padding: 4px 20px 4px 20px;
+    cursor: pointer;
+}
+
+.end-game-button:hover {
+    background-color: lightcoral;
+}
+
+.hidden {
+    display: none;
+}
