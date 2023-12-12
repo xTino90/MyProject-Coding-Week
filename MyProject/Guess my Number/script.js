@@ -77,3 +77,4 @@ document.querySelector(".again").addEventListener("click", function () {
   // restore number width
   document.querySelector(".number").style.width = "15rem";
 });
+let tino;
