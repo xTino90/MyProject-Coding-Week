@@ -1,6 +1,7 @@
 "use strict";
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
+let highscore = 0;
 // document.querySelector(".number").textContent = secretNumber;
 
 // Logic Game!
@@ -19,6 +20,14 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector(".number").style.width = "30rem";
     document.querySelector(".number").innerHTML =
       secretNumber + "<br> You  Win!";
+    score--;
+    document.querySelector(".score").textContent = score;
+    // highscore = score;
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector(".highscore").textContent = highscore;
+    }
+
     //when is to high!
   } else if (guess > secretNumber) {
     if (score > 1) {
