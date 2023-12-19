@@ -588,11 +588,11 @@
 // console.log(menu, starters);
 
 // // Mutating variables
-// let a = 111;
-// let b = 999;
-// const obj = { a: 23, b: 7, c: 14 };
-// ({ a, b } = obj);
-// console.log(a, b);
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+({ a, b } = obj);
+console.log(a, b);
 
 // // Nested objects
 // const {
@@ -614,7 +614,7 @@
 // let [main, , secondary] = restaurant.categories;
 // console.log(main, secondary);
 
-//  Switching variables
+⁡⁣⁣⁢//⁡  ⁡⁣⁣⁢Switching variables⁡
 //  const temp = main;
 //  main = secondary;
 //  secondary = temp;
@@ -623,16 +623,16 @@
 // [main, secondary] = [secondary, main];
 // console.log(main, secondary);
 
-//  Receive 2 return values from a function
+⁡⁣⁣ //  Receive 2 return values from a function⁡
 // const [starter, mainCourse] = restaurant.order(2, 0);
 // console.log(starter, mainCourse);
 
-//  Nested destructuring
+⁢//  Nested destructuring⁡
 // const nested = [2, 4, [5, 6]];
 // const [i, , j] = nested;
 // const [i, , [j, k]] = nested;
 // console.log(i, j, k);
 
-//  Default values
+⁡⁣⁣⁢//  Default values⁡
 // const [p = 1, q = 1, r = 1] = [8, 9];
 // console.log(p, q, r);
