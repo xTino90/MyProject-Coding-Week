@@ -73,7 +73,7 @@
 
 //                                                                           ⁡⁣⁢⁣​‌‍‌// Working With Strings - Part 2​⁡
 
-// // Split and join
+// ⁡⁣⁣⁢// Split and join⁡
 // console.log('a+very+nice+string'.split('+'));
 // console.log('Jonas Schmedtmann'.split(' '));
 
@@ -96,7 +96,7 @@
 // capitalizeName('jessica ann smith davis');
 // capitalizeName('jonas schmedtmann');
 
-// // Padding
+// ⁡⁣⁣⁢// Padding⁡
 // const message = 'Go to gate 23!';
 // console.log(message.padStart(20, '+').padEnd(30, '+'));
 // console.log('Jonas'.padStart(20, '+').padEnd(30, '+'));
@@ -111,7 +111,7 @@
 // console.log(maskCreditCard(43378463864647384));
 // console.log(maskCreditCard('334859493847755774747'));
 
-// // Repeat
+// ⁡⁣⁣⁢// Repeat⁡
 // const message2 = 'Bad waether... All Departues Delayed... ';
 // console.log(message2.repeat(5));
 

@@ -190,20 +190,9 @@ gameEvents.delete(64);
 console.log([...gameEvents.entries()]);
 
 // 3.
-// Extract event times from the map
-const eventTimes = Array.from(gameEvents.keys());
-
-// Calculate the average time difference between events
-const totalMinutes = 90; // Total duration of the game
-const averageTimeDifference = totalMinutes / (eventTimes.length - 1);
-
-// Construct the string
-const resultString = `An event happened, on average, every ${averageTimeDifference.toFixed(
-  2
-)} minutes`;
-
-// Log the result to the console
-console.log(resultString);
+console.log(
+  `An event happened, on average, every ${92 / gameEvents.size} minutes`
+);
 
 // 4.
 const totalMinutes1 = 90;
@@ -212,3 +201,40 @@ for (const [minute, event] of gameEvents) {
   const half = minute <= 45 ? "FIRST HALF" : "SECOND HALF";
   console.log(`[${half}] ${minute}: ${event}`);
 }
+
+// challenge 5.
+/*
+underscore_case
+first_name
+Some_Variable 
+ calculate_AGE
+delayed_departure
+*/
+
+const writeCorrect = function (str) {
+  const string = str.toLowerCase();
+  const strCorrect = string[0].toUpperCase() + string.slice(1);
+  const new1 = strCorrect.replace(("_", " ").slice(" ").toUpperCase);
+
+  console.log(new1);
+};
+
+writeCorrect("underscore_case");
+writeCorrect("first_name");
+writeCorrect("Some_Variable");
+writeCorrect("calculate_AGE");
+writeCorrect("delayed_departure");
+
+// const capitalizeName = function (name) {
+//   const names = name.split(" ");
+//   const namesUpper = [];
+
+//   for (const n of names) {
+//     // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+//     namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+//   }
+//   console.log(namesUpper.join(" "));
+// };
+
+// capitalizeName("jessica ann smith davis");
+// capitalizeName("jonas schmedtmann");
