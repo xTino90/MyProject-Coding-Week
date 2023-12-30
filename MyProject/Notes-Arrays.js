@@ -224,6 +224,13 @@ let balance2 = 0;
 for (const mov of movements) balance2 += mov;
 console.log(balance2);
 
+// ⁡⁢⁣⁣challenge on the video
+⁡
+const moviments = [-100, -200, 2000, -350, 365, 400];
+const withdrawals = moviments.filter(mov => mov > 0);
+
+console.log(withdrawals);
+
 // ⁡⁣⁣⁢Maximum value⁡
 const max = movements.reduce((acc, mov) => {
   if (acc > mov) return acc;
