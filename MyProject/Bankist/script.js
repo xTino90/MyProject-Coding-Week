@@ -222,7 +222,7 @@ btnLogin.addEventListener('click', function (e) {
   const locale = navigator.language;
   labelDate.textContent = new Intl.DateTimeFormat(locale, options).format(now);
 
-  // Clear Input fields
+  // Clear Input fields -
   currentAccount = accounts.find(
     acc => acc.username === inputLoginUsername.value
   );
