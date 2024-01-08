@@ -272,7 +272,7 @@ btnLoan.addEventListener('click', function (e) {
     currentAccount.movements.push(amount);
     // add current date
     currentAccount.movementsDates.push(new Date().toISOString());
-    //Update UI
+    //Update UI -
     updateUI(currentAccount);
   }
   inputLoanAmount.value = '';
