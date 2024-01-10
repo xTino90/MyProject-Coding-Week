@@ -195,9 +195,35 @@ const createUsernames = function (accs) {
 createUsernames(accounts);
 console.log(accounts);
 
+const startLogOutTimer = function () {
+  const tick = function () {
+    const min = String(Math.trunc(time / 60)).padStart(2, 0);
+    const sec = String(time % 60).padStart(2, 0);
+
+    //in each call print the remaining time
+    labelTimer.textContent = `${min}:${sec}`;
+
+    //when 0 seconds, stop timer and log out user
+    if (time === 0) {
+      clearInterval(timer);
+      labelWelcome.textContent = 'Log in to get started';
+      containerApp.style.opacity = 0;
+    }
+    time--;
+  };
+
+  // set time to 5 minutes
+  let time = 300;
+
+  //call the timer every seconds
+  tick();
+  const timer = setInterval(tick, 1000);
+  return timer;
+};
+
 ///////////////////////////////////////////////////////
 // Event handlers
-let currentAccount;
+let currentAccount, timer;
 btnLogin.addEventListener('click', function (e) {
   // prevent default
   e.preventDefault();
@@ -236,6 +262,9 @@ btnLogin.addEventListener('click', function (e) {
     //clear input fields
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
+    //Timer
+    if (timer) clearInterval(timer);
+    timer = startLogOutTimer();
     updateUI(currentAccount);
   }
 });
@@ -261,6 +290,8 @@ btnTransfer.addEventListener('click', function (e) {
     receiverAcc.movementsDates.push(new Date().toISOString());
     //update UI
     updateUI(currentAccount);
+    clearInterval(timer);
+    timer = startLogOutTimer();
   }
 });
 
@@ -274,6 +305,8 @@ btnLoan.addEventListener('click', function (e) {
     currentAccount.movementsDates.push(new Date().toISOString());
     //Update UI -
     updateUI(currentAccount);
+    clearInterval(timer);
+    timer = startLogOutTimer();
   }
   inputLoanAmount.value = '';
 });
