@@ -99,7 +99,7 @@ DATA CAR 1: 'BMW' going at 120 km/h
 DATA CAR 2: 'Mercedes' going at 95 km/h
 
 GOOD LUCK 😀*/
-
+/*
 const Car = function (make, speed) {
   this.make = make;
   this.speed = speed;
@@ -125,21 +125,21 @@ car1.brake();
 car2.brake();
 car1.brake();
 car1.brake();
-
+*/
 ///////////////////////////////////////
-//ES6 Classes⁡
+//⁡⁣⁣⁢ES6 Classes⁡⁡⁡
 
-/*/ Class expression
+/*/ ⁡⁣⁣⁢Class expression⁡
 // const PersonCl = class {}
 
-// Class declaration
+// ⁡⁣⁣⁢Class declaration⁡
 class PersonCl {
   constructor(fullName, birthYear) {
     this.fullName = fullName;
     this.birthYear = birthYear;
   }
 
-  // Instance methods
+  // ⁡⁣⁣⁢Instance methods⁡
   // Methods will be added to .prototype property
   calcAge() {
     console.log(2037 - this.birthYear);
@@ -153,7 +153,7 @@ class PersonCl {
     return 2037 - this.birthYear;
   }
 
-  // Set a property that already exists
+  // ⁡⁣⁣⁢Set a property that already exists⁡
   set fullName(name) {
     if (name.includes(' ')) this._fullName = name;
     else alert(`${name} is not a full name!`);
@@ -163,7 +163,7 @@ class PersonCl {
     return this._fullName;
   }
 
-  // Static method
+  // ⁡⁣⁣⁢Static method⁡
   static hey() {
     console.log('Hey there 👋');
     console.log(this);
@@ -191,7 +191,7 @@ const walter = new PersonCl('Walter White', 1965);
 
 
 ///////////////////////////////////////
-// Setters and Getters
+// ⁡⁣⁣⁢Setters and Getters⁡
 const account = {
   owner: 'Jonas',
   movements: [200, 530, 120, 300],
@@ -212,7 +212,7 @@ console.log(account.movements);
 
 
 ///////////////////////////////////////
-// Object.create
+// ⁡⁣⁣⁢Object.create⁡
 const PersonProto = {
   calcAge() {
     console.log(2037 - this.birthYear);
@@ -238,7 +238,7 @@ sarah.calcAge();
 */
 
 ///////////////////////////////////////
-// Coding Challenge #2
+// ⁡⁣⁣⁢Coding Challenge #2⁡
 
 /* 
 1. Re-create challenge 1, but this time using an ES6 class;
@@ -287,7 +287,7 @@ console.log(ford);
 
 
 ///////////////////////////////////////
-// Inheritance Between "Classes": Constructor Functions
+// ⁡⁣⁣⁢Inheritance Between "Classes": Constructor Functions⁡
 
 const Person = function (firstName, birthYear) {
   this.firstName = firstName;
@@ -303,7 +303,7 @@ const Student = function (firstName, birthYear, course) {
   this.course = course;
 };
 
-// Linking prototypes
+// ⁡⁣⁣⁢Linking prototypes⁡
 Student.prototype = Object.create(Person.prototype);
 
 Student.prototype.introduce = function () {
@@ -326,20 +326,21 @@ console.dir(Student.prototype.constructor);
 */
 
 ///////////////////////////////////////
-// Coding Challenge #3
+// ⁡⁣⁣⁢Coding Challenge #3⁡
 
 /* 
-1. Use a constructor function to implement an Electric Car (called EV) as a CHILD "class" of Car. Besides a make and current speed, the EV also has the current battery charge in % ('charge' property);
+1. Use a constructor function to implement an Electric Car (called EV) as a CHILD "class" of Car. 
+Besides a make and current speed, the EV also has the current battery charge in % ('charge' property);
 2. Implement a 'chargeBattery' method which takes an argument 'chargeTo' and sets the battery charge to 'chargeTo';
-3. Implement an 'accelerate' method that will increase the car's speed by 20, and decrease the charge by 1%. Then log a message like this: 'Tesla going at 140 km/h, with a charge of 22%';
-4. Create an electric car object and experiment with calling 'accelerate', 'brake' and 'chargeBattery' (charge to 90%). Notice what happens when you 'accelerate'! HINT: Review the definiton of polymorphism 😉
+3. Implement an 'accelerate' method that will increase the car's speed by 20, and decrease the charge by 1%. 
+Then log a message like this: 'Tesla going at 140 km/h, with a charge of 22%';
+4. Create an electric car object and experiment with calling 'accelerate', 'brake' and 'chargeBattery' (charge to 90%).
+ Notice what happens when you 'accelerate'! HINT: Review the definiton of polymorphism 😉
 
 DATA CAR 1: 'Tesla' going at 120 km/h, with a charge of 23%
 
 GOOD LUCK 😀
 */
-
-/*
 const Car = function (make, speed) {
   this.make = make;
   this.speed = speed;
@@ -347,43 +348,42 @@ const Car = function (make, speed) {
 
 Car.prototype.accelerate = function () {
   this.speed += 10;
-  console.log(`${this.make} is going at ${this.speed} km/h`);
+  console.log(this.speed);
 };
-
 Car.prototype.brake = function () {
-  this.speed -= 5;
-  console.log(`${this.make} is going at ${this.speed} km/h`);
+  this.speed = this.speed - 5;
+  console.log(this.speed);
 };
 
 const EV = function (make, speed, charge) {
   Car.call(this, make, speed);
   this.charge = charge;
 };
-
-// Link the prototypes
 EV.prototype = Object.create(Car.prototype);
-
+// set latest(mov) {
+//   this.movements.push(mov);
+// },
 EV.prototype.chargeBattery = function (chargeTo) {
   this.charge = chargeTo;
 };
-
 EV.prototype.accelerate = function () {
   this.speed += 20;
-  this.charge--;
+  this.charge -= 1;
   console.log(
-    `${this.make} is going at ${this.speed} km/h, with a charge of ${this.charge}`
+    `${this.make} going at ${this.speed} km/h, with a charge of ${this.charge}`
   );
 };
 
-const tesla = new EV('Tesla', 120, 23);
-tesla.chargeBattery(90);
-console.log(tesla);
-tesla.brake();
-tesla.accelerate();
+const Tesla = new EV("Tesla", 120, 23);
+Tesla.accelerate();
+Tesla.accelerate();
+Tesla.brake();
+Tesla.brake();
+Tesla.brake();
 
-
-///////////////////////////////////////
-// Inheritance Between "Classes": ES6 Classes
+Tesla.chargeBattery();
+/*//////////////////////////////////////
+// ⁡⁣⁣⁢Inheritance Between "Classes": ES6 Classes⁡
 
 class PersonCl {
   constructor(fullName, birthYear) {
