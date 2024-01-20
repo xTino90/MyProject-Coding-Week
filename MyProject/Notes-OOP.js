@@ -341,6 +341,7 @@ DATA CAR 1: 'Tesla' going at 120 km/h, with a charge of 23%
 
 GOOD LUCK 😀
 */
+/*
 const Car = function (make, speed) {
   this.make = make;
   this.speed = speed;
@@ -382,6 +383,7 @@ Tesla.brake();
 Tesla.brake();
 
 Tesla.chargeBattery();
+*/
 /*//////////////////////////////////////
 // ⁡⁣⁣⁢Inheritance Between "Classes": ES6 Classes⁡
 
@@ -447,7 +449,7 @@ martha.calcAge();
 
 
 ///////////////////////////////////////
-// Inheritance Between "Classes": Object.create
+// ⁡⁣⁣⁢Inheritance Between "Classes": Object.create⁡
 
 const PersonProto = {
   calcAge() {
@@ -483,8 +485,8 @@ jay.calcAge();
 
 
 ///////////////////////////////////////
-// Encapsulation: Protected Properties and Methods
-// Encapsulation: Private Class Fields and Methods
+// ⁡⁣⁣⁢Encapsulation: Protected Properties and Methods⁡
+// ⁡⁣⁣⁢Encapsulation: Private Class Fields and Methods⁡
 
 // 1) Public fields
 // 2) Private fields
@@ -572,7 +574,7 @@ console.log(acc1.getMovements());
 */
 
 ///////////////////////////////////////
-// Coding Challenge #4
+// ⁡⁣⁣⁢Coding Challenge #4⁡
 
 /* 
 1. Re-create challenge #3, but this time using ES6 classes: create an 'EVCl' child class of the 'CarCl' class
@@ -584,7 +586,41 @@ DATA CAR 1: 'Rivian' going at 120 km/h, with a charge of 23%
 GOOD LUCK 😀
 */
 
-/*
+// const Car = function (make, speed) {
+//   this.make = make;
+//   this.speed = speed;
+// };
+
+// Car.prototype.accelerate = function () {
+//   this.speed += 10;
+//   console.log(this.speed);
+// };
+// Car.prototype.brake = function () {
+//   this.speed = this.speed - 5;
+//   console.log(this.speed);
+// };
+
+// const EV = function (make, speed, charge) {
+//   Car.call(this, make, speed);
+//   this.charge = charge;
+// };
+// EV.prototype = Object.create(Car.prototype);
+// // set latest(mov) {
+// //   this.movements.push(mov);
+// // },
+// EV.prototype.chargeBattery = function (chargeTo) {
+//   this.charge = chargeTo;
+// };
+// EV.prototype.accelerate = function () {
+//   this.speed += 20;
+//   this.charge -= 1;
+//   console.log(
+//     `${this.make} going at ${this.speed} km/h, with a charge of ${this.charge}`
+//   );
+// };
+
+// const Tesla = new EV("Tesla", 120, 23);
+
 class CarCl {
   constructor(make, speed) {
     this.make = make;
@@ -601,7 +637,6 @@ class CarCl {
     console.log(`${this.make} is going at ${this.speed} km/h`);
     return this;
   }
-
   get speedUS() {
     return this.speed / 1.6;
   }
@@ -610,7 +645,6 @@ class CarCl {
     this.speed = speed * 1.6;
   }
 }
-
 class EVCl extends CarCl {
   #charge;
 
@@ -636,16 +670,15 @@ class EVCl extends CarCl {
   }
 }
 
-const rivian = new EVCl('Rivian', 120, 23);
-console.log(rivian);
-// console.log(rivian.#charge);
-rivian
-  .accelerate()
-  .accelerate()
-  .accelerate()
-  .brake()
-  .chargeBattery(50)
-  .accelerate();
+const electricCar = new EVCl("Rivian", 120, 23);
 
-console.log(rivian.speedUS);
-*/
+// console.log(electricCar.accelerate());
+electricCar
+  .accelerate()
+  .accelerate()
+  .accelerate()
+  .chargeBattery(50)
+  .accelerate()
+  .brake();
+
+console.log(electricCar.chargeBattery());
