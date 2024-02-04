@@ -178,7 +178,7 @@ TEST COORDINATES 2: -33.933, 18.474
 
 GOOD LUCK 😀
 */
-
+/*
 const whereAmI = function (lat, lng) {
   fetch(
     `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}`
@@ -195,7 +195,7 @@ const whereAmI = function (lat, lng) {
     });
 };
 whereAmI(52.508, 13.381);
-
+*/
 /*//////////////////////////////////////
 // ⁡⁣⁣⁢The Event Loop in Practice⁡
 console.log('Test start');
